@@ -213,6 +213,13 @@ function checkUI() {
     results.innerHTML=`${items.length} Result(s)`;      //Nova funcionalidade
 }
 
+//Nova funcionalidade
+document.addEventListener('keyup', function(event) {
+    if (event.key === 'Escape') {
+        checkUI();
+    }
+});
+
 // Initialize app
 function init(){
     itemForm.addEventListener('submit', onItemAddSubmit);
@@ -220,7 +227,6 @@ function init(){
     clearBtn.addEventListener('click', clearItems);
     itemFilter.addEventListener('input', filterItems);
     document.addEventListener('DOMContentLoaded', displayItems);
-    document.addEventListener('keyup', checkUI);        //Nova funcionalidade
 
     checkUI();
 }
